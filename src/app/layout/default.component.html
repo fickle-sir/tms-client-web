@@ -1,0 +1,38 @@
+<div class="processing-bar" *ngIf="isFetching"></div>
+<header>
+  <div class="topbar-logo">{{entName}}</div>
+  <!--<ul class="topbar-nav">
+    <li><i nz-icon nzType="menu-{{collapsed ? 'unfold' : 'fold'}}"></i></li>
+  </ul>
+  <div class="topbar-search"></div>-->
+  <ul class="topbar-nav right">
+    <li>
+      <div nz-dropdown [nzDropdownMenu]="uMenu">{{userName}}</div>
+      <nz-dropdown-menu #uMenu>
+        <ul nz-menu>
+          <li nz-menu-item (click)="logout()">
+            <!-- <i nz-icon nzType="logout"></i> -->
+            <span>安全退出</span>
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </li>
+  </ul>
+</header>
+<aside>
+  <div class="outer">
+    <div class="inner">
+      <nj-menu class="aside-content" menus="sidebar" open="true"></nj-menu>
+    </div>
+  </div>
+</aside>
+<main>
+  <div class="box">
+    <nj-reuse-tab></nj-reuse-tab>
+    <content>
+      <div class="box">
+        <router-outlet></router-outlet>
+      </div>
+    </content>
+  </div>
+</main>

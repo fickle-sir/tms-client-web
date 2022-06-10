@@ -1,0 +1,3 @@
+[submodule "src/ng-jx"]
+	path = src/ng-jx
+	url = https://gitee.com/fickle-sir/ng-jx.git

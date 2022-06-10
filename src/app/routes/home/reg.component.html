@@ -1,0 +1,26 @@
+<form nz-form [formGroup]="form" (ngSubmit)="submit()">
+  <nz-form-item>
+    <nz-form-label nzFor="Username" nzRequired nzSpan="6">用户名</nz-form-label>
+    <nz-form-control nzSpan="18" [nzErrorTip]="error">
+      <input nz-input formControlName="Username" placeholder="用户名">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="Password" nzRequired nzSpan="6">密码</nz-form-label>
+    <nz-form-control nzSpan="18" [nzErrorTip]="error">
+      <input nz-input formControlName="Password" type="password" placeholder="密码">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="Confirm" nzRequired nzSpan="6">确认密码</nz-form-label>
+    <nz-form-control nzSpan="18" [nzErrorTip]="error">
+      <input nz-input formControlName="Confirm" type="password" placeholder="确认密码">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzSpan]="18" [nzOffset]="6">
+      <button nz-button nzType="primary" nzSize="large" [nzLoading]="loading" type="submit">立即注册</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<ng-template #error let-ctl>{{ctl.errors?.error}}</ng-template>

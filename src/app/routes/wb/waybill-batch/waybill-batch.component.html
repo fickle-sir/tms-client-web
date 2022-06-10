@@ -1,0 +1,17 @@
+<nj-form [fields]="options?.fields" [nzSpan]="options?.nzSpan" style="width:1000px;"></nj-form>
+<!-- <form nz-form [formGroup]="form">
+  <div nz-row>
+    <div nz-col [nzSpan]="8">
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true" [nzSpan]="8">发货人</nz-form-label>
+        <nz-form-control [nzSpan]="16">
+          <nj-select [njInputable]="true" [nzShowSearch]="true" ></nj-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+</form> -->
+<nj-table-optional options="WaybillCargo" [optionsResolver]="cargoOptionsResolver"></nj-table-optional>
+<div class="waybill-batch-toolbar">
+  <button>test</button>
+</div>

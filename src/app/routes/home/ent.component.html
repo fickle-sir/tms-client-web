@@ -1,0 +1,39 @@
+<form *ngIf="form" nz-form [formGroup]="form" (ngSubmit)="submit()">
+  <input type="hidden" formControlName="ID" />
+  <nz-form-item>
+    <nz-form-label nzFor="Name" nzRequired nzSpan="6">企业名称</nz-form-label>
+    <nz-form-control nzSpan="18" [nzErrorTip]="error">
+      <input nz-input formControlName="Name">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="Contact" nzRequired nzSpan="6">联系人</nz-form-label>
+    <nz-form-control nzSpan="18" [nzErrorTip]="error">
+      <input nz-input formControlName="Contact">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="Tel" nzRequired nzSpan="6">联系电话</nz-form-label>
+    <nz-form-control nzSpan="18" [nzErrorTip]="error">
+      <input nz-input formControlName="Tel">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="CascadeAddr" nzRequired nzSpan="6">地址信息</nz-form-label>
+    <nz-form-control nzSpan="18" [nzErrorTip]="error">
+      <nz-cascader formControlName="CascadeAddr" [nzLoadData]="loadDistrict"></nz-cascader>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="AssociateAddr" nzRequired nzSpan="6">详细地址</nz-form-label>
+    <nz-form-control nzSpan="18" [nzErrorTip]="error">
+      <input nz-input formControlName="AssociateAddr">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzSpan]="18" [nzOffset]="6">
+      <button nz-button nzType="primary" nzSize="large" [nzLoading]="loading" type="submit">{{btnText}}</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<ng-template #error let-ctl>{{ctl.errors?.error}}</ng-template>
